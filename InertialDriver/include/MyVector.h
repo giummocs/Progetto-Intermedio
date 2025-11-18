@@ -10,7 +10,7 @@ class MyVector{
 	
 	public:
 	MyVector(int max_size);
-	
+	ee
 	MyVector(std::initializer_list<T> lst);
 	
 	T& operator[] (int i);
