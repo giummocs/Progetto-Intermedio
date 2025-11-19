@@ -32,7 +32,7 @@ class InertialDriver{
     Lettura get_reading(int i);
 
     //overloading dell'operatore << che stampa in output ultima misura salvata
-   std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
+	std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
    
 private:
     MyVector<Lettura[]> v;
@@ -44,6 +44,7 @@ private:
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
