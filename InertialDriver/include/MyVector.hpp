@@ -2,46 +2,50 @@
 #ifndef MyVector_hpp
 #define MyVector_hpp
 
+template<typename T>
+MyVector<T>::MyVector(int max_size){
+	//inizializzo le variabili
+	size = 0;
+	this->max_size = max_size;
+	pointer_first = 0;
+	pointer_last = 0;
+	v = new T[max_size];
+
+	//inizializzo tutti i valori a 0
+	std::fill(v, v+max_size, 0.0);
+}
+
+template<typename T>
+MyVector<T>::MyVector(std::initializer_list<T> lst){
+	//inizializzo le variabili
+	pointer_first = 0;
+	pointer_last = 0;
+	size = lst.size();
+	max_size = size * 2;
+	v = new T[max_size];
+
+	//copio la lista nel nuovo vettore appena creato e inizializzo gli spazi vuoti a 0
+	std::copy(lst.begin(), lst.end(), v);
+	std::fill(v+size, v+max_size, 0.0);
+}
+
 template <typename T>
 void MyVector<T>::safe_set(int i, T valore)
 {
-    if(i<0 || i >= vSize)
-    {
-        throw std::out_of_range("Indice sbagliato");
-    }
+	//lancio una eccezione se l'indice e' sbagliato
+    if(i<0 || i>=size){
+		throw std::out_of_range("Indice fuori dai bordi!");
+	}
     v[i] = valore;
 }
 
 template <typename T>
 T MyVector<T>::safe_get(int i)
 {
-    if(i<0 || i>=vSize)
-    {
-        throw std::out_of_range("Indice sbagliato");
-    }
-    return v[i];
-}
-
-template<typename T>
-MyVector<T>::MyVector(int max_size){
-	
-	size = 0;
-	this->max_size = max_size;
-	v = new T[max_size];
-	
-	for(int i=0;i<max_size;i++){
-		v[i] = 0.0;
+    if(i<0 || i>=size){
+		throw std::out_of_range("Indice fuori dai bordi!");
 	}
-}
-
-template<typename T>
-MyVector<T>::MyVector(std::initializer_list<T> lst){
-	
-	size = lst.size();
-	max_size = size * 2;
-	v = new T[max_size];
-	std::copy(lst.begin(), lst.end(), v);
-	std::fill(v+size, v+max_size, 0.0);
+    return v[i];
 }
 
 template<typename T>
@@ -73,6 +77,18 @@ void MyVector<T>::push_back(T valore){
        }
        v[size] = valore;
        size++;
+}
+
+template<typename T>
+void MyVector<T>::push_back_circolare(T valore){
+
+	if(max_size==0){
+		throw std::out_of_range("Il vettore non ha dimensione!");
+	}
+
+	
+	
+	increment_pointer();
 }
 
 template<typename T>
