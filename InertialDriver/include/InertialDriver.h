@@ -1,5 +1,5 @@
-#ifndef INERTIALDRIVER_H
-#define INERTIALDRIVER_H
+#ifndef InertialDriver_h
+#define InertialDriver_h
 
 #include "Lettura.h"
 #include "MyVector.h"
@@ -44,6 +44,7 @@ private:
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
