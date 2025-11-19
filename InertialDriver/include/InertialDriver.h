@@ -8,7 +8,7 @@ class InertialDriver{
     public:
 
 	//costante globale che indica il numero di sensori
-	constexpr int SENSOR=17;
+	const int SENSOR=17;
 
 	//costante public accessibile dall'esterno in sola lettura, utile per visualizzare la dimensione del buffer
     const int BUFFER_DIM;
@@ -23,7 +23,7 @@ class InertialDriver{
 
     //rimozione di una misura
     //void poiche' stampa in output l'array piu' vecchio
-    Lettura[] pop_front();
+    Lettura* pop_front();
 
     //svuota senza restituire nulla il buffer
     void clear_buffer();
@@ -44,6 +44,7 @@ private:
 
 #include "InertialDriver.cpp"
 #endif
+
 
 
 
