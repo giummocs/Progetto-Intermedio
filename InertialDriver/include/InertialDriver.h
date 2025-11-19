@@ -37,6 +37,8 @@ class InertialDriver{
     MyVector<Lettura[]> v;
 }
 
+#include "IntertialDriver.cpp"
 #endif
+
 
 
