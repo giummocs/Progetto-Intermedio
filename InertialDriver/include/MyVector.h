@@ -28,7 +28,20 @@ class MyVector{
 	~MyVector();
 
 	private:
-	int size, max_size;
+
+	//numero di elementi riempiti del vettore
+	int size;
+
+	//dimensione fisica del vettore
+	int max_size;
+
+	//puntatore all'elemento piu vecchio (primo inserito) del vettore circolare
+	int pointer_first;
+
+	//puntatore all'elemento piu nuovo (ultimo inserito) del vettore circolare
+	int pointer_last;
+
+	//vettore
 	T* v;
 };
 
