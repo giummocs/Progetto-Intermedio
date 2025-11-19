@@ -1,8 +1,8 @@
 #ifndef INERTIALDRIVER_H
 #define INERTIALDRIVER_H
 
-#include "MyVector.h"
 #include "Lettura.h"
+#include "MyVector.h"
 //opzione rigida definisco una costante globale che rappresenta la dimensione massima del buffer
 //constexpr int BUFFER_DIM = 5;
 
@@ -37,3 +37,4 @@ class InertialDriver{
 }
 
 #endif
+
