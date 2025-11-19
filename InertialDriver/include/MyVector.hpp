@@ -66,6 +66,11 @@ T& MyVector<T>::at(int i){
 }
 
 template<typename T>
+int MyVector<T>::getSize(){
+	return size;
+}
+
+template<typename T>
 void MyVector<T>::push_back(T valore){
 	
 	if (size >= max_size) {
