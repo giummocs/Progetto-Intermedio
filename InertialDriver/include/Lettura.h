@@ -1,5 +1,5 @@
-#ifndef LETTURA_H
-#define LETTURA_H
+#ifndef Lettura_h
+#define Lettura_h
 
 struct Lettura{
     double yaw_v;
@@ -9,6 +9,7 @@ struct Lettura{
     double roll_v;
     double roll_a;
 };
+
 
 
 #endif
