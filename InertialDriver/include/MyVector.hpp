@@ -2,6 +2,25 @@
 #ifndef MyVector_hpp
 #define MyVector_hpp
 
+template <typename T>
+void MyVector<T>::safe_set(int i, T valore)
+{
+    if(i<0 || i >= vSize)
+    {
+        throw std::out_of_range("Indice sbagliato");
+    }
+    v[i] = valore;
+}
+
+template <typename T>
+T MyVector<T>::safe_get(int i)
+{
+    if(i<0 || i>=vSize)
+    {
+        throw std::out_of_range("Indice sbagliato");
+    }
+    return v[i];
+}
 
 template<typename T>
 MyVector<T>::MyVector(int max_size){
