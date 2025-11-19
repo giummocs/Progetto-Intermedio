@@ -57,12 +57,16 @@ int main(){
     }
     std::cout<< id2;
     //se ora faccio pop_front dovrei ottenere misura2
-    Lettura m[]= id2.pop_front
+    Lettura* m = id2.pop_front
+
+    delete[] m;
 
     //svuoto id2 con pop_front
     for (int i= 0; i<8; i++)
     {
-        Lettura a[]=id2.pop_front;
+        Lettura* a = id2.pop_front;
+
+        delete[] a;
     }
 
     //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
@@ -87,6 +91,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
