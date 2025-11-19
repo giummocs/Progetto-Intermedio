@@ -12,13 +12,13 @@
 		BUFFER_DIM=buff_sz;
 		MyVector v(BUFFER_DIM);
 	}
-
+	//DA COMPLETARE
 	void InertialDriver::push_back(Lettura v[])
 	{
 		v.push;
 		return;
 	}
-	
+	//DA COMPLETARE
 	Lettura[] InertialDriver::pop_front()
 	{
 		return v.pop_front();
