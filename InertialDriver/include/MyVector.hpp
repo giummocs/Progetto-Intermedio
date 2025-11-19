@@ -113,19 +113,5 @@ MyVector<T>::~MyVector(){
 	delete[] v;
 }
 
-void increment_pointer_last(){
-	last = (last+1) % BUFFER_MIN;
-	if(last == first){
-		first = (first+1) % BUFFER_MIN;
-	}
-}
-
-//MODIFICARE QUESTA!!!
-void increment_pointer_first(){
-	first = (first+1) % BUFFER_MIN;
-	
-}
-
-
 
 #endif
