@@ -78,9 +78,9 @@ int main(){
     id2.push_back(misura1);
 
     //test della funzione get_reading
-    Lettura l1 = id2.get_reading();
+    Lettura l1 = id2.get_reading(0);
     //dovrebbe lanciare un'eccezione con
-    Lettura l2 = id1.get_reading();
+    Lettura l2 = id1.get_reading(0);
 
     //test della funzione clear_buffer
     id2.clear_buffer();
@@ -91,6 +91,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
