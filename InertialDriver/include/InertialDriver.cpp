@@ -34,7 +34,7 @@
     
     Lettura InertialDriver::get_reading(int i)
     {   
-
+		
         return v[pointer][i];
     }
  
@@ -43,12 +43,12 @@
     for(int i = 0; i < 17; i++)
     {
         out << "Sensore " << i + 1 << ":\n";
-        out << "Pitch_v = " << t.v[t.pointer][i].pitch_v << "\n";
-        out << "Pitch_a = " << t.v[t.pointer][i].pitch_a << "\n";
-        out << "Yaw_v = " << t.v[t.pointer][i].yaw_v << "\n";
-        out << "Yaw_a = " << t.v[t.pointer][i].yaw_a << "\n";
-        out << "Roll_v = " << t.v[t.pointer][i].roll_v << "\n";
-        out << "Roll_a = " << t.v[t.pointer][i].roll_a << "\n\n";
+        out << "Pitch_v = " << t.v[pointer_last][i].pitch_v << "\n";
+        out << "Pitch_a = " << t.v[][i].pitch_a << "\n";
+        out << "Yaw_v = " << t.v[][i].yaw_v << "\n";
+        out << "Yaw_a = " << t.v[][i].yaw_a << "\n";
+        out << "Roll_v = " << t.v[][i].roll_v << "\n";
+        out << "Roll_a = " << t.v[][i].roll_a << "\n\n";
     }
         
     }
