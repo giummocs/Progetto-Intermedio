@@ -33,14 +33,8 @@ class MyVector{
 	//inserisce un nuovo elemento, aumentando la dimensione del vettore se necessario
 	void push_back(T valore);
 
-	//inserisce un nuovo elemento, gestendolo con una politica circolare
-	void push_back_circolare(T valore);
-
 	//preleva e rimuove l'ultimo elemento del vettore
 	T pop_back();
-
-	//preleva e rimuove il primo elemento della coda, gestendolo con una politica circolare
-	T pop_front();
 
 	//distruttore
 	~MyVector();
@@ -56,12 +50,6 @@ class MyVector{
 
 	//dimensione fisica del vettore
 	int max_size;
-
-	//puntatore all'elemento piu vecchio (primo inserito) del vettore circolare
-	int pointer_first;
-
-	//puntatore all'elemento piu nuovo (ultimo inserito) del vettore circolare
-	int pointer_last;
 
 	//vettore
 	T* v;
