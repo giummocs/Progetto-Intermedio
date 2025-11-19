@@ -17,11 +17,23 @@ void InertialDriver::push_back(Lettura misura[]){
 	}
 	v[last] = misura;
 
+	last = (last+1) % BUFFER_DIM;
+	if(last == first){
+		first = (first+1) % BUFFER_DIM;
+	}
 	
 }
 //DA COMPLETARE
 Lettura[] InertialDriver::pop_front(){
-	return v.pop_front();
+	if(last == first){
+		throw std::out_of_range("Il vettore e' vuoto!");
+	}
+
+	int tempFirst = first;
+	first = (first+1) % BUFFER_DIM;
+
+	return v[tempFirst];	
+	
 }
 
 void InertialDriver::clear_buffer(){   
