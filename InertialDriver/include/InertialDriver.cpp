@@ -1,13 +1,10 @@
 #include "InertialDriver.h"
 
-InertialDriver::InertialDriver(){
-	BUFFER_DIM=0;
-	MyVector v = new MyVector(BUFFER_DIM);
-}
+InertialDriver::InertialDriver() : BUFFER_DIM(0), v(0) {}
 	
-InertialDriver::InertialDriver(int buff_sz){
-	BUFFER_DIM=buff_sz;
-	MyVector v = new MyVector(BUFFER_DIM);
+InertialDriver::InertialDriver(int buff_sz) : BUFFER_DIM(buff_sz), v(buff_sz) {
+    first = 0;
+    last = 0;
 }
 
 
