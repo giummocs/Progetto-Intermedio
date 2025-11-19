@@ -35,7 +35,7 @@
     Lettura InertialDriver::get_reading(int i)
     {   
 		
-        return v[pointer][i];
+        return v[pointer_last][i];
     }
  
     std::ostream& operator<<(std::ostream& out, const InertialDriver& t)
