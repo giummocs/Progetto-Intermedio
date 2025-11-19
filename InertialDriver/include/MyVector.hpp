@@ -35,7 +35,7 @@ void MyVector<T>::safe_set(int i, T valore)
 }
 
 template <typename T>
-T MyVector<T>::safe_get(int i)
+T& MyVector<T>::safe_get(int i)
 {
     if(i<0 || i>=size){
 		throw std::out_of_range("Indice fuori dai bordi!");
@@ -80,7 +80,7 @@ void MyVector<T>::push_back(T valore){
 }
 
 template<typename T>
-T MyVector<T>::pop_back(){
+T& MyVector<T>::pop_back(){
 	
 	if(size > 0){
 		T oldValue = v[size-1];

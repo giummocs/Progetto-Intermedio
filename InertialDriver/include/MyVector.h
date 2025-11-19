@@ -25,7 +25,7 @@ class MyVector{
 	void safe_set(int i, T valore);
 
 	//get di un valore del vettore
-    T safe_get(int i);
+    T& safe_get(int i);
 
 	//prende un valore del vettore e lo ritorna per riferimento
 	T& at(int i);
@@ -37,7 +37,7 @@ class MyVector{
 	void push_back(T valore);
 
 	//preleva e rimuove l'ultimo elemento del vettore
-	T pop_back();
+	T& pop_back();
 
 	//distruttore
 	~MyVector();

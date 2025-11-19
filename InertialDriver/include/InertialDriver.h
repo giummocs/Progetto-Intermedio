@@ -23,7 +23,7 @@ class InertialDriver{
 
     //rimozione di una misura
     //void poiche' stampa in output l'array piu' vecchio
-    Lettura* pop_front();
+    Lettura& pop_front();
 
     //svuota senza restituire nulla il buffer
     void clear_buffer();
@@ -40,12 +40,9 @@ private:
 	//indici che indicano il primo e l'ultimo elemento del vettore circolare
 	int first, last;
 
-}
+};
 
-#include "InertialDriver.cpp"
 #endif
-
-
 
 
 

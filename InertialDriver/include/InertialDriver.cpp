@@ -1,6 +1,5 @@
 #include "InertialDriver.h"
 
-
 InertialDriver::InertialDriver(){
 	BUFFER_DIM=0;
 	MyVector v = new MyVector(BUFFER_DIM);
@@ -25,7 +24,7 @@ void InertialDriver::push_back(Lettura misura[]){
 	
 }
 
-Lettura[] InertialDriver::pop_front(){
+Lettura& InertialDriver::pop_front(){
 	if(last == first){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}
