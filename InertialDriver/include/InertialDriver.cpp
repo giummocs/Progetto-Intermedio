@@ -45,7 +45,9 @@ void InertialDriver::clear_buffer(){
 }
     
 Lettura InertialDriver::get_reading(int i){   
-		
+	if(i<0 || i>16){
+		throw std::out_of_range("Indice fuori dai bordi!");
+	}
     return v[last][i];
 }
  
@@ -53,12 +55,12 @@ std::ostream& operator<<(std::ostream& out, const InertialDriver& t){
 	for(int i = 0; i < 17; i++)
 	{
 	    out << "Sensore " << i + 1 << ":\n";
+		out << "Yaw_v = " << t.v[last][i].yaw_v << "\n";
+		out << "Yaw_a = " << t.v[last][i].yaw_a << "\n";
 	    out << "Pitch_v = " << t.v[last][i].pitch_v << "\n";
-	    out << "Pitch_a = " << t.v[][i].pitch_a << "\n";
-	    out << "Yaw_v = " << t.v[][i].yaw_v << "\n";
-	    out << "Yaw_a = " << t.v[][i].yaw_a << "\n";
-	    out << "Roll_v = " << t.v[][i].roll_v << "\n";
-	    out << "Roll_a = " << t.v[][i].roll_a << "\n\n";
+	    out << "Pitch_a = " << t.v[last][i].pitch_a << "\n";
+	    out << "Roll_v = " << t.v[last][i].roll_v << "\n";
+	    out << "Roll_a = " << t.v[last][i].roll_a << "\n\n";
 	}
         
 }
