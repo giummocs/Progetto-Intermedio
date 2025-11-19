@@ -43,10 +43,12 @@ Lettura* InertialDriver::pop_front(){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}
 
-	int tempFirst = first;
+	Lettura* vecchia_misura = v[first]; 
+    v[first] = nullptr; 
+	
 	first = (first+1) % BUFFER_DIM;
 
-	return v[tempFirst];	
+	return vecchia_misura;	
 	
 }
 
