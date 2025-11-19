@@ -1,7 +1,6 @@
 #ifndef MyVector_h
 #define MyVector_h
 
-#include <iostream>
 #include <stdexcept>
 #include <initializer_list>
 
