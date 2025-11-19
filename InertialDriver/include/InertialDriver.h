@@ -31,6 +31,8 @@ class InertialDriver{
 
     //restituisce la lettura di indice i della misura piu' recente
     Lettura get_reading(int i);
+
+	InertialDriver::~InertialDriver();
    
 private:
     MyVector<Lettura*> v;
@@ -44,6 +46,7 @@ private:
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
 
 #endif
+
 
 
 
