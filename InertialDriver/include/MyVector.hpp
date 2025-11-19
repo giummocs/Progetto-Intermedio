@@ -81,14 +81,19 @@ void MyVector<T>::push_back(T valore){
 
 template<typename T>
 void MyVector<T>::push_back_circolare(T valore){
+	//verifico che siano dello stesso tipo
+	if(T==)
 
 	if(max_size==0){
 		throw std::out_of_range("Il vettore non ha dimensione!");
 	}
 
+	//inserisco il nuovo elemento
+	v[pointer_last] = valore;
+	
+	//gestisco l'incremento dei puntatori con una politica circolare
 	
 	
-	increment_pointer();
 }
 
 template<typename T>
@@ -124,7 +129,36 @@ MyVector<T>::~MyVector(){
 	delete[] v;
 }
 
+void increment_pointer_last(){
+	if(pointer_last+1 == pointer_first){
+		increment_pointer_first();
+		pointer_last++;
+	}
+	else if(pointer_last == max_size-1 && pointer_first == 0){
+		increment_pointer_first();
+		pointer_last = 0;
+	}
+	else{
+		pointer_last++;
+	}
+	size++;
+}
 
+//MODIFICARE QUESTA!!!
+void increment_pointer_first(){
+	if(pointer_last+1 == pointer_first){
+		increment_pointer_first();
+		pointer_last++;
+	}
+	else if(pointer_last == max_size-1 && pointer_first == 0){
+		increment_pointer_first();
+		pointer_last = 0;
+	}
+	else{
+		pointer_last++;
+	}
+	size--;
+}
 
 
 
