@@ -12,9 +12,12 @@ InertialDriver::InertialDriver(int buff_sz){
 }
 //DA COMPLETARE
 void InertialDriver::push_back(Lettura misura[]){
-	if(max_size==0){
+	if(BUFFER_DIM==0){
 		throw std::out_of_range("Il vettore non ha dimensione!");
 	}
+	v[last] = misura;
+
+	
 }
 //DA COMPLETARE
 Lettura[] InertialDriver::pop_front(){
