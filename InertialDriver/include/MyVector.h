@@ -30,6 +30,9 @@ class MyVector{
 	//prende un valore del vettore e lo ritorna per riferimento
 	T& at(int i);
 
+	//funzione che ritorna la dimensione logica del vettore (size)
+	int getSize();
+
 	//inserisce un nuovo elemento, aumentando la dimensione del vettore se necessario
 	void push_back(T valore);
 
