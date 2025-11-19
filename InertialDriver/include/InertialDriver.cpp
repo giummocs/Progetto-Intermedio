@@ -23,4 +23,33 @@
 	{
 		return v.pop_front();
 	}
+
+	void InertialDriver::clear_buffer()
+    {   
+        while(size > 0)
+        {
+            pop_front();    
+        }
+    }
+    
+    Lettura InertialDriver::get_reading(int i)
+    {   
+
+        return v[pointer][i];
+    }
+ 
+    std::ostream& operator<<(std::ostream& out, const InertialDriver& t)
+    {
+    for(int i = 0; i < 17; i++)
+    {
+        out << "Sensore " << i + 1 << ":\n";
+        out << "Pitch_v = " << t.v[t.pointer][i].pitch_v << "\n";
+        out << "Pitch_a = " << t.v[t.pointer][i].pitch_a << "\n";
+        out << "Yaw_v = " << t.v[t.pointer][i].yaw_v << "\n";
+        out << "Yaw_a = " << t.v[t.pointer][i].yaw_a << "\n";
+        out << "Roll_v = " << t.v[t.pointer][i].roll_v << "\n";
+        out << "Roll_a = " << t.v[t.pointer][i].roll_a << "\n\n";
+    }
+        
+    }
 }
