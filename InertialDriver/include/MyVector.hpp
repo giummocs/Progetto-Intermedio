@@ -130,34 +130,16 @@ MyVector<T>::~MyVector(){
 }
 
 void increment_pointer_last(){
-	if(pointer_last+1 == pointer_first){
-		increment_pointer_first();
-		pointer_last++;
+	last = (last+1) % BUFFER_MIN;
+	if(last == first){
+		first = (first+1) % BUFFER_MIN;
 	}
-	else if(pointer_last == max_size-1 && pointer_first == 0){
-		increment_pointer_first();
-		pointer_last = 0;
-	}
-	else{
-		pointer_last++;
-	}
-	size++;
 }
 
 //MODIFICARE QUESTA!!!
 void increment_pointer_first(){
-	if(pointer_last+1 == pointer_first){
-		increment_pointer_first();
-		pointer_last++;
-	}
-	else if(pointer_last == max_size-1 && pointer_first == 0){
-		increment_pointer_first();
-		pointer_last = 0;
-	}
-	else{
-		pointer_last++;
-	}
-	size--;
+	first = (first+1) % BUFFER_MIN;
+	
 }
 
 
