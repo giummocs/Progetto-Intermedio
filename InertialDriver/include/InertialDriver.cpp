@@ -79,6 +79,10 @@ Lettura InertialDriver::get_reading(int i){
 	int index_last = (last - 1 + BUFFER_DIM) % BUFFER_DIM;
     return v[index_last][i];
 }
+
+InertialDriver::~InertialDriver(){
+	clear_buffer();
+}
  
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t){
 
