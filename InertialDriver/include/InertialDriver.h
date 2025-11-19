@@ -3,8 +3,9 @@
 
 #include "Lettura.h"
 #include "MyVector.h"
-//opzione rigida definisco una costante globale che rappresenta la dimensione massima del buffer
-//constexpr int BUFFER_DIM = 5;
+
+//costante globale che indica il numero di sensori
+constexpr int SENSOR=17;
 
 class InertialDriver{
     public:
@@ -45,6 +46,7 @@ private:
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
