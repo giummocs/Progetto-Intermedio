@@ -8,7 +8,8 @@
 
 class InertialDriver{
     public:
-    
+
+	//costante public accessibile dall'esterno in sola lettura, utile per visualizzare la dimensione del buffer
     const int BUFFER_DIM;
 
 	InertialDriver();
@@ -37,4 +38,5 @@ class InertialDriver{
 }
 
 #endif
+
 
