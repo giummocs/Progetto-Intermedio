@@ -4,11 +4,11 @@
 #include "Lettura.h"
 #include "MyVector.h"
 
-//costante globale che indica il numero di sensori
-constexpr int SENSOR=17;
-
 class InertialDriver{
     public:
+
+	//costante globale che indica il numero di sensori
+	constexpr int SENSOR=17;
 
 	//costante public accessibile dall'esterno in sola lettura, utile per visualizzare la dimensione del buffer
     const int BUFFER_DIM;
@@ -44,6 +44,7 @@ private:
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
