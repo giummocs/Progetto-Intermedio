@@ -55,8 +55,16 @@ Lettura* InertialDriver::pop_front(){
 void InertialDriver::clear_buffer(){   
 	//first==last significa che il vettore e' vuoto
     while(first != last){
-         v.pop_front();    
+		
+         if (v[first] != nullptr) {
+            delete[] v[first]; 
+            v[first] = nullptr; 
+        }
+		
+		first = (first+1) % BUFFER_DIM;
     }
+	first = 0;
+	last = 0;
 }
     
 Lettura InertialDriver::get_reading(int i){   
