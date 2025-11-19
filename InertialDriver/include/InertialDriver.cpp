@@ -82,6 +82,8 @@ Lettura InertialDriver::get_reading(int i){
 
 InertialDriver::~InertialDriver(){
 	clear_buffer();
+
+	delete[] v;
 }
  
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t){
