@@ -1,4 +1,3 @@
-
 #ifndef MyVector_hpp
 #define MyVector_hpp
 
