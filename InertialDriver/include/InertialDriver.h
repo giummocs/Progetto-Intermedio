@@ -1,6 +1,7 @@
 #ifndef InertialDriver_h
 #define InertialDriver_h
 
+#include <iostream>
 #include "Lettura.h"
 #include "MyVector.h"
 
@@ -30,9 +31,6 @@ class InertialDriver{
 
     //restituisce la lettura di indice i della misura piu' recente
     Lettura get_reading(int i);
-
-    //overloading dell'operatore << che stampa in output ultima misura salvata
-	std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
    
 private:
     MyVector<Lettura[]> v;
@@ -42,7 +40,11 @@ private:
 
 };
 
+//overloading dell'operatore << che stampa in output ultima misura salvata
+std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
+
 #endif
+
 
 
 
