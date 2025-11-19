@@ -7,8 +7,6 @@ MyVector<T>::MyVector(int max_size){
 	//inizializzo le variabili
 	size = 0;
 	this->max_size = max_size;
-	pointer_first = 0;
-	pointer_last = 0;
 	v = new T[max_size];
 
 	//inizializzo tutti i valori a 0
@@ -18,8 +16,6 @@ MyVector<T>::MyVector(int max_size){
 template<typename T>
 MyVector<T>::MyVector(std::initializer_list<T> lst){
 	//inizializzo le variabili
-	pointer_first = 0;
-	pointer_last = 0;
 	size = lst.size();
 	max_size = size * 2;
 	v = new T[max_size];
@@ -77,23 +73,6 @@ void MyVector<T>::push_back(T valore){
        }
        v[size] = valore;
        size++;
-}
-
-template<typename T>
-void MyVector<T>::push_back_circolare(T valore){
-	//verifico che siano dello stesso tipo
-	if(T==)
-
-	if(max_size==0){
-		throw std::out_of_range("Il vettore non ha dimensione!");
-	}
-
-	//inserisco il nuovo elemento
-	v[pointer_last] = valore;
-	
-	//gestisco l'incremento dei puntatori con una politica circolare
-	
-	
 }
 
 template<typename T>
