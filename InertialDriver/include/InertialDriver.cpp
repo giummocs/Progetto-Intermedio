@@ -11,8 +11,8 @@ InertialDriver::InertialDriver(int buff_sz){
 	MyVector v(BUFFER_DIM);
 }
 //DA COMPLETARE
-void InertialDriver::push_back(Lettura v[]){
-	v.push;
+void InertialDriver::push_back(Lettura misura[]){
+	v.push_back_circolare(misura);
 	return;
 }
 //DA COMPLETARE
@@ -22,8 +22,9 @@ Lettura[] InertialDriver::pop_front(){
 
 void InertialDriver::clear_buffer(){   
     while(size > 0){
-         pop_front();    
+         v.pop_front();    
     }
+	return;
 }
     
 Lettura InertialDriver::get_reading(int i){   
