@@ -68,10 +68,16 @@ void InertialDriver::clear_buffer(){
 }
     
 Lettura InertialDriver::get_reading(int i){   
-	if(i<0 || i>16){
+	if(i < 0 || i >= SENSOR){
 		throw std::out_of_range("Indice fuori dai bordi!");
 	}
-    return v[last][i];
+	
+	if(first == last){
+        throw std::out_of_range("Il vettore e' vuoto!");
+    }
+
+	int index_last = (last - 1 + BUFFER_DIM) % BUFFER_DIM;
+    return v[index_last][i];
 }
  
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t){
