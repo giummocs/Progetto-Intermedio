@@ -42,8 +42,9 @@ private:
 
 }
 
-#include "IntertialDriver.cpp"
+#include "InertialDriver.cpp"
 #endif
+
 
 
 
