@@ -63,20 +63,25 @@ int main()
 
     //test della funzione get_reading
     Lettura let1 = id2.get_reading();
+    //dovrebbe lanciare un'eccezione con
+    Lettura let2 = id1.get_reading();
 
     //test della funzione clear_buffer
     id2.clear_buffer();
     std::cout<< id2;
+    id1.clear_buffer();
+    std::cout<< id1;
 
     //riempio parzialmente id2 giusto per testare
     id2.push_back(misura1);
     id2.push_back(misura1);
 
     //test di pop_front
-    Lettura let2 = id2.pop_front();
     Lettura let3 = id2.pop_front();
-    //dovrebbe lanciare un'eccezione con
     Lettura let4 = id2.pop_front();
+    //dovrebbe lanciare un'eccezione con
+    Lettura let5 = id2.pop_front();
 
     return 0;
+
 }
