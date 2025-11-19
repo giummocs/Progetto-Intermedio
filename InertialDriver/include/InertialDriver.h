@@ -37,15 +37,14 @@ class InertialDriver{
 private:
     MyVector<Lettura[]> v;
 
-	//funzione membro per gestire l'incremento del puntatore
-	void increment_pointer();
+	//indici che indicano il primo e l'ultimo elemento del vettore circolare
+	int first, last;
 
-	//funzione membro per gestire il decremento del puntatore
-	void decrement_pointer();
 }
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
