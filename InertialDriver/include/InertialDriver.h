@@ -31,9 +31,9 @@ class InertialDriver{
     Lettura get_reading(int i);
 
     //overloading dell'operatore << che stampa in output ultima misura salvata
-    void operator<<();
-
-    private:
+   std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
+   
+private:
     MyVector<Lettura[]> v;
 
 	//funzione membro per gestire l'incremento del puntatore
@@ -45,6 +45,7 @@ class InertialDriver{
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
