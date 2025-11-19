@@ -22,7 +22,7 @@ class InertialDriver{
 
     //rimozione di una misura
     //void poiche' stampa in output l'array piu' vecchio
-    void pop_front();
+    Lettura[] pop_front();
 
     //svuota senza restituire nulla il buffer
     void clear_buffer();
@@ -39,6 +39,7 @@ class InertialDriver{
 
 #include "IntertialDriver.cpp"
 #endif
+
 
 
 
