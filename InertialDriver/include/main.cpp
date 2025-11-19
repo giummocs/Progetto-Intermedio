@@ -81,8 +81,10 @@ int main()
     Lettura let4 = id2.pop_front();
     //dovrebbe lanciare un'eccezione con
     Lettura let5 = id2.pop_front();
+    Lettura let6 = id1.pop_front();
 
     return 0;
 
 }
+
 
