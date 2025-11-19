@@ -100,6 +100,6 @@ std::ostream& operator<<(std::ostream& out, const InertialDriver& t){
 	    out << "Roll_v = " << t.v[index_last][i].roll_v << "\n";
 	    out << "Roll_a = " << t.v[index_last][i].roll_a << "\n\n";
 	}
-        
+    return out;
 }
 
