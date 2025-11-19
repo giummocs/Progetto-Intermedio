@@ -47,19 +47,36 @@ int main(){
 
     id1.push_back(misura2);
     std::cout<< id1;
+    
     id2.push_back(misura2);
     std::cout<< id2;
 
-    //riempio id2
-    for (int i = 1; i<= 8; i++){
+    //riempio id2 e dovrebbe sovrascrivere la misure piu' vecchie
+    for (int i = 0; i< 9; i++){
         id2.push_back(misura3);
     }
     std::cout<< id2;
+    //se ora faccio pop_front dovrei ottenere misura2
+    Lettura m[]= id2.pop_front
+
+    //svuoto id2 con pop_front
+    for (int i= 0; i<8; i++)
+    {
+        Lettura a[]=id2.pop_front;
+    }
+
+    //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
+    Lettura m1[] = id2.pop_front();
+    Lettura m2[] = id1.pop_front();
+
+    //riempio parzialmente id2 giusto per testare
+    id2.push_back(misura1);
+    id2.push_back(misura1);
 
     //test della funzione get_reading
-    Lettura let1 = id2.get_reading();
+    Lettura l1 = id2.get_reading();
     //dovrebbe lanciare un'eccezione con
-    Lettura let2 = id1.get_reading();
+    Lettura l2 = id1.get_reading();
 
     //test della funzione clear_buffer
     id2.clear_buffer();
@@ -67,20 +84,10 @@ int main(){
     id1.clear_buffer();
     std::cout<< id1;
 
-    //riempio parzialmente id2 giusto per testare
-    id2.push_back(misura1);
-    id2.push_back(misura1);
-
-    //test di pop_front
-    Lettura let3 = id2.pop_front();
-    Lettura let4 = id2.pop_front();
-    //dovrebbe lanciare un'eccezione con
-    Lettura let5 = id2.pop_front();
-    Lettura let6 = id1.pop_front();
-
     return 0;
 
 }
+
 
 
 
