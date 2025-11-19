@@ -4,8 +4,8 @@
 int main()
 {
     //creo due oggetti InertialDriver uno senza parametro e uno con
-    InertialDriver id1{};
-    InertialDriver id2{10};
+    InertialDriver id1();
+    InertialDriver id2(10);
 
     //creo diverse misure (array di 17 letture)
     Lettura misura1[SENSOR];
@@ -85,3 +85,4 @@ int main()
     return 0;
 
 }
+
