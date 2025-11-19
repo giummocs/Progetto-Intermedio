@@ -14,6 +14,10 @@ class MyVector{
 	MyVector(std::initializer_list<T> lst);
 	
 	T& operator[] (int i);
+
+	void safe_set(int i, T valore);
+    
+    T safe_get(int i);
 	
 	const T& operator[] (int i) const;
 	
