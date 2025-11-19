@@ -3,14 +3,15 @@
 
 InertialDriver::InertialDriver(){
 	BUFFER_DIM=0;
-	MyVector v(BUFFER_DIM);
+	MyVector v = new MyVector(BUFFER_DIM);
 }
 	
 InertialDriver::InertialDriver(int buff_sz){
 	BUFFER_DIM=buff_sz;
-	MyVector v(BUFFER_DIM);
+	MyVector v = new MyVector(BUFFER_DIM);
 }
-//DA COMPLETARE
+
+
 void InertialDriver::push_back(Lettura misura[]){
 	if(BUFFER_DIM==0){
 		throw std::out_of_range("Il vettore non ha dimensione!");
@@ -23,7 +24,7 @@ void InertialDriver::push_back(Lettura misura[]){
 	}
 	
 }
-//DA COMPLETARE
+
 Lettura[] InertialDriver::pop_front(){
 	if(last == first){
 		throw std::out_of_range("Il vettore e' vuoto!");
