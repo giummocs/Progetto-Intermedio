@@ -1,16 +1,14 @@
 #include <iostream>
 #include "InertialDriver.h"
 
-int main()
-{
+int main(){
     //creo due oggetti InertialDriver uno senza parametro e uno con
     InertialDriver id1();
     InertialDriver id2(10);
 
     //creo diverse misure (array di 17 letture)
     Lettura misura1[SENSOR];
-    for (int i= 0; i < SENSOR; i++)
-    {
+    for (int i= 0; i < SENSOR; i++){
         misura1[i].yaw_v= 0;
         misura1[i].yaw_a= 0;
         misura1[i].pitch_v= 0;
@@ -20,8 +18,7 @@ int main()
     }
 
     Lettura misura2[SENSOR];
-    for (int i= 0; i < SENSOR; i++)
-    {
+    for (int i= 0; i < SENSOR; i++){
         misura2[i].yaw_v= i;
         misura2[i].yaw_a= i;
         misura2[i].pitch_v= i;
@@ -30,8 +27,7 @@ int main()
         misura2[i].roll_a= i;
     }
     Lettura misura3[SENSOR];
-    for (int i= 0; i < SENSOR; i++)
-    {
+    for (int i= 0; i < SENSOR; i++){
         misura3[i].yaw_v= i*100;
         misura3[i].yaw_a= i*100;
         misura3[i].pitch_v= i*100;
@@ -55,8 +51,7 @@ int main()
     std::cout<< id2;
 
     //riempio id2
-    for (int i = 1; i<= 8; i++)
-    {
+    for (int i = 1; i<= 8; i++){
         id2.push_back(misura3);
     }
     std::cout<< id2;
@@ -86,5 +81,6 @@ int main()
     return 0;
 
 }
+
 
 
