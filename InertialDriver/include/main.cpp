@@ -7,8 +7,8 @@ int main(){
     InertialDriver id2(10);
 
     //creo diverse misure (array di 17 letture)
-    Lettura misura1[SENSOR];
-    for (int i= 0; i < SENSOR; i++){
+    Lettura misura1[id1.SENSOR];
+    for (int i= 0; i < id1.SENSOR; i++){
         misura1[i].yaw_v= 0;
         misura1[i].yaw_a= 0;
         misura1[i].pitch_v= 0;
@@ -17,8 +17,8 @@ int main(){
         misura1[i].roll_a= 0;
     }
 
-    Lettura misura2[SENSOR];
-    for (int i= 0; i < SENSOR; i++){
+    Lettura misura2[id1.SENSOR];
+    for (int i= 0; i < id1.SENSOR; i++){
         misura2[i].yaw_v= i;
         misura2[i].yaw_a= i;
         misura2[i].pitch_v= i;
@@ -26,8 +26,8 @@ int main(){
         misura2[i].roll_v= i;
         misura2[i].roll_a= i;
     }
-    Lettura misura3[SENSOR];
-    for (int i= 0; i < SENSOR; i++){
+    Lettura misura3[id1.SENSOR];
+    for (int i= 0; i < id1.SENSOR; i++){
         misura3[i].yaw_v= i*100;
         misura3[i].yaw_a= i*100;
         misura3[i].pitch_v= i*100;
@@ -57,21 +57,21 @@ int main(){
     }
     std::cout<< id2;
     //se ora faccio pop_front dovrei ottenere misura2
-    Lettura* m = id2.pop_front
+    Lettura* m = id2.pop_front();
 
     delete[] m;
 
     //svuoto id2 con pop_front
     for (int i= 0; i<8; i++)
     {
-        Lettura* a = id2.pop_front;
+        Lettura* a = id2.pop_front();
 
         delete[] a;
     }
 
     //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
-    Lettura m1[] = id2.pop_front();
-    Lettura m2[] = id1.pop_front();
+    Lettura* m1 = id2.pop_front();
+    Lettura* m2 = id1.pop_front();
 
     //riempio parzialmente id2 giusto per testare
     id2.push_back(misura1);

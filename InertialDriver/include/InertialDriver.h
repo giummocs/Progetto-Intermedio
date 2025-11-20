@@ -31,8 +31,10 @@ class InertialDriver{
 
     //restituisce la lettura di indice i della misura piu' recente
     Lettura get_reading(int i);
+    
+    std::ostream& print() const;
 
-	InertialDriver::~InertialDriver();
+	~InertialDriver();
    
 private:
     MyVector<Lettura*> v;
