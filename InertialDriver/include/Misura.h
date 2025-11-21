@@ -15,8 +15,6 @@ class Misura{
   Lettura* get();
   //restisce lettura all'indice i
   Lettura at(int i);
-  //distruttore
-  ~Misura();
   
   Lettura& operator[] (int i);
   
