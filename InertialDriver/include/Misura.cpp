@@ -29,3 +29,7 @@ Misura::~Misura(){
 Lettura& Misura::operator[] (int i){
     return array[i];
 }
+
+const Lettura& operator[] (int i) const{
+    return array[i];
+}
