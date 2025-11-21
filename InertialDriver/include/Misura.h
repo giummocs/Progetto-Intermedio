@@ -3,7 +3,7 @@
 
 #include "Lettura.h"
 class Misura{
-  constexpr SENSOR= 17;
+  const SENSOR= 17;
   Misura();
   
   
