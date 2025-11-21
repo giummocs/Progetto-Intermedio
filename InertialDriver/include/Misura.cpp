@@ -38,7 +38,7 @@ Lettura& Misura::operator[] (int i){
     return array[i];
 }
 
-const Lettura& operator[] (int i) const{
+const Lettura& Misura::operator[] (int i) const{
     return array[i];
 }
 
