@@ -61,22 +61,22 @@ int main(){
     }
     std::cout<< id2;
     //se ora faccio pop_front dovrei ottenere misura2 DA COMPLETARE!!
-    Misura m = id2.pop_front();
+    Lettura* m = id2.pop_front();
 
     delete m;
 
     //svuoto id2 con pop_front
     for (int i= 0; i<8; i++)
     {
-        Misura a = id2.pop_front();
+        Lettura* a = id2.pop_front();
 
-        //delete a;   <-- se esce dallo scope del for non viene distrutto in automatico?
+        delete[] a;
     }
 
     //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
     try{
-        Misura m1 = id2.pop_front();
-        Misura m2 = id1.pop_front();
+        Lettura* m1 = id2.pop_front();
+        Lettura* m2 = id1.pop_front();
     }
     catch (const std::out_of_range& e){
         std::cout<< "Il vettore e' vuoto! \n"
@@ -111,6 +111,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
