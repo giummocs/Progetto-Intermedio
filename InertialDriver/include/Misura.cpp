@@ -23,6 +23,9 @@ void Misura::replace(Lettura nuova_misura[]){
 }
 
 Lettura Misura::at(int i){
+    if(i < 0 || i >= SENSOR){
+		throw std::out_of_range("Indice fuori dai bordi!");
+	}
     
     return array[i];
 }
