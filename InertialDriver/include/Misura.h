@@ -1,6 +1,7 @@
 #ifndef MISURA_H
 #define MISURA_H
 
+#include <iostream>
 #include "Lettura.h"
 
 class Misura{
@@ -11,7 +12,7 @@ class Misura{
   //
   void replace(Lettura nuova_misura[]);
   //
-  Lettura[] get();
+  Lettura* get();
   //restisce lettura all'indice i
   Lettura at(int i);
   //distruttore
@@ -21,7 +22,7 @@ class Misura{
   
   const Lettura& operator[] (int i) const;
 
-  std::ostream& Misura::print() const;
+  std::ostream& print() const;
 
   private:
   Lettura array[SENSOR];

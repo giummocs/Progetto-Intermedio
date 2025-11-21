@@ -26,7 +26,7 @@ void InertialDriver::push_back(Lettura nuova_misura[]){
 	
 }
 
-Misura InertialDriver::pop_front(){
+Lettura* InertialDriver::pop_front(){
 	if(last == first){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}

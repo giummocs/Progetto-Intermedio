@@ -13,16 +13,16 @@ Misura::Misura(){
 
 void Misura::replace(Lettura nuova_misura[]){
     for (int i = 0; i < SENSOR; i++){
-        array[i].yaw_v=misura[i].yaw_v;
-        array[i].yaw_a=misura[i].yaw_a;
-        array[i].pitch_v=misura[i].pitch_v;
-        array[i].pitch_a=misura[i].pitch_a;
-        array[i].roll_v=misura[i].roll_v;
-        array[i].roll_a=misura[i].roll_a;
+        array[i].yaw_v = nuova_misura[i].yaw_v;
+        array[i].yaw_a = nuova_misura[i].yaw_a;
+        array[i].pitch_v = nuova_misura[i].pitch_v;
+        array[i].pitch_a = nuova_misura[i].pitch_a;
+        array[i].roll_v = nuova_misura[i].roll_v;
+        array[i].roll_a = nuova_misura[i].roll_a;
       }
 }
 
-Lettura[] Misura::get(){
+Lettura* Misura::get(){
 	return array;
 }
 
