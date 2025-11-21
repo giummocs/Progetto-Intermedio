@@ -42,11 +42,9 @@ Misura InertialDriver::pop_front(){
 void InertialDriver::clear_buffer(){   
 	//first==last significa che il vettore e' vuoto
     while(first != last){
-		
-         if (v[first] != nullptr) {
-            delete[] v[first]; 
-            v[first] = nullptr; 
-        }
+
+		//resetto l'oggetto usando il costruttore
+        v[first] = Misura();
 		
 		first = (first+1) % BUFFER_DIM;
     }
