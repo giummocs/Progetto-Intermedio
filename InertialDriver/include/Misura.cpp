@@ -21,3 +21,6 @@ void Misura::replace(Lettura nuova_misura[]){
         array[i].roll_a=misura[i].roll_a;
       }
 }
+Misura::~Misura(){
+    delete[] array;
+}
