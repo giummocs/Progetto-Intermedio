@@ -42,6 +42,14 @@ const Lettura& operator[] (int i) const{
     return array[i];
 }
 
+std::ostream& Misura::print() const{
+	std::ostream& out = std::cout;
+
+	
+    
+    return out;
+}
+
 std::ostream& operator<<(std::ostream& out, const Misura& t){
 
 	return t.print();
