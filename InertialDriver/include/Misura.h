@@ -18,6 +18,8 @@ class Misura{
   
   const Lettura& operator[] (int i) const;
 
+  std::ostream& Misura::print() const;
+
   private:
   Lettura array[SENSOR];
 };
