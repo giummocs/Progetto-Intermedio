@@ -70,7 +70,7 @@ int main(){
     {
         Lettura* a = id2.pop_front();
 
-        delete[] a;
+       // delete[] a;
     }
 
     //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
@@ -111,6 +111,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
