@@ -20,6 +20,8 @@ class Misura{
 
   private:
   Lettura array[SENSOR];
-}
+};
+
+std::ostream& operator<<(std::ostream& out, const Misura& t);
 
 #endif
