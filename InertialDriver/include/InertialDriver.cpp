@@ -35,7 +35,7 @@ Misura InertialDriver::pop_front(){
 	
 	first = (first+1) % BUFFER_DIM;
 
-	return v[old_first];	
+	return v[old_first].get();
 	
 }
 
