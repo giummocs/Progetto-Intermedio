@@ -2,15 +2,11 @@
 #define InertialDriver_h
 
 #include <iostream>
-#include "Lettura.h"
+#include "Misura.h"
 #include "MyVector.h"
 
 class InertialDriver{
     public:
-
-	//costante globale che indica il numero di sensori
-	const int SENSOR=17;
-
 	//costante public accessibile dall'esterno in sola lettura, utile per visualizzare la dimensione del buffer
     const int BUFFER_DIM;
 
@@ -48,6 +44,7 @@ private:
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
 
 #endif
+
 
 
 
