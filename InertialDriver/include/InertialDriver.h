@@ -33,7 +33,7 @@ class InertialDriver{
 	~InertialDriver();
    
 private:
-    MyVector<Lettura*> v;
+    MyVector<Misura> v;
 
 	//indici che indicano il primo e l'ultimo elemento del vettore circolare
 	int first, last;
@@ -44,6 +44,7 @@ private:
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t);
 
 #endif
+
 
 
 
