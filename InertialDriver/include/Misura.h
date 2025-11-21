@@ -12,7 +12,7 @@ class Misura{
   //distruttore
   ~Misura();
   
-
+  Lettura& operator[] (int i);
 
 
 
