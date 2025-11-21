@@ -34,10 +34,6 @@ Lettura Misura::at(int i){
     return array[i];
 }
 
-Misura::~Misura(){
-    delete[] array;
-}
-
 Lettura& Misura::operator[] (int i){
     return array[i];
 }
