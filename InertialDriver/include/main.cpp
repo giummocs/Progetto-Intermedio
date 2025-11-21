@@ -2,13 +2,15 @@
 #include "InertialDriver.h"
 
 int main(){
+
+    static const SENSOR = 17;
     //creo due oggetti InertialDriver uno senza parametro e uno con
     InertialDriver id1;
     InertialDriver id2(10);
 
     //creo diverse misure (array di 17 letture)
-    Lettura misura1[id1.SENSOR];
-    for (int i= 0; i < id1.SENSOR; i++){
+    Lettura misura1[SENSOR];
+    for (int i= 0; i < SENSOR; i++){
         misura1[i].yaw_v= 0;
         misura1[i].yaw_a= 0;
         misura1[i].pitch_v= 0;
@@ -38,40 +40,48 @@ int main(){
 
 
     //test della funzione push_back su i due oggetti InertialDriver e stampo a schermo l'ultima misura salvata
-    //push_back su id1 dovrebbe lanciare un'eccezione
-    id1.push_back(misura1);
-    std::cout<< id1;
-
     id2.push_back(misura1);
     std::cout<< id2;
-
-    id1.push_back(misura2);
-    std::cout<< id1;
-    
     id2.push_back(misura2);
     std::cout<< id2;
+    
+    //push_back su id1 dovrebbe lanciare un'eccezione
+    try{
+        id1.push_back(misura2);
+        std::cout<< id1;
+        id1.push_back(misura1);
+        std::cout<< id1;
+    }
+    catch(const std::out_of_range& e){
+        std::cout<<"Il vettore non ha dimensione! \n";
+    }
 
     //riempio id2 e dovrebbe sovrascrivere la misure piu' vecchie
     for (int i = 0; i< 9; i++){
         id2.push_back(misura3);
     }
     std::cout<< id2;
-    //se ora faccio pop_front dovrei ottenere misura2
-    Lettura* m = id2.pop_front();
+    //se ora faccio pop_front dovrei ottenere misura2 DA COMPLETARE!!
+    Misura m = id2.pop_front();
 
-    delete[] m;
+    delete m;
 
     //svuoto id2 con pop_front
     for (int i= 0; i<8; i++)
     {
-        Lettura* a = id2.pop_front();
+        Misura a = id2.pop_front();
 
-        delete[] a;
+        //delete a;   <-- se esce dallo scope del for non viene distrutto in automatico?
     }
 
     //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
-    Lettura* m1 = id2.pop_front();
-    Lettura* m2 = id1.pop_front();
+    try{
+        Misura m1 = id2.pop_front();
+        Misura m2 = id1.pop_front();
+    }
+    catch (const std::out_of_range& e){
+        std::cout<< "Il vettore e' vuoto! \n"
+    }
 
     //riempio parzialmente id2 giusto per testare
     id2.push_back(misura1);
@@ -80,7 +90,18 @@ int main(){
     //test della funzione get_reading
     Lettura l1 = id2.get_reading(0);
     //dovrebbe lanciare un'eccezione con
-    Lettura l2 = id1.get_reading(0);
+    try{
+        Lettura l2 = id1.get_reading(0);
+    }
+    catch (const std::out_of_range& e){
+        std::cout<< "Il vettore e' vuoto! \n"
+    }
+    try{
+        Lettura l2 = id2.get_reading(9999);
+    }
+    catch (const std::out_of_range& e){
+        std::cout<< "Indice non corretto \n"
+    }
 
     //test della funzione clear_buffer
     id2.clear_buffer();
@@ -91,6 +112,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
