@@ -12,7 +12,7 @@ class Misura{
   //
   void replace(Lettura nuova_misura[]);
   //
-  Lettura* get();
+  const Lettura* get() const;
   //restisce lettura all'indice i
   Lettura at(int i);
   
