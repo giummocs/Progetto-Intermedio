@@ -45,7 +45,7 @@ const Lettura& operator[] (int i) const{
 std::ostream& Misura::print() const{
 	std::ostream& out = std::cout;
 
-	for(int i = 0; i < 17; i++)
+	for(int i = 0; i < SENSOR; i++)
 	{
 	    out << "Sensore " << i + 1 << ":\n";
 		out << "Yaw_v = " << array[i].yaw_v << "\n";
