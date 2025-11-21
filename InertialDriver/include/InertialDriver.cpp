@@ -31,11 +31,11 @@ Misura InertialDriver::pop_front(){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}
 
-	Misura vecchia_misura = v[first];
+	int old_first = first;
 	
 	first = (first+1) % BUFFER_DIM;
 
-	return vecchia_misura;	
+	return v[old_first];	
 	
 }
 
