@@ -31,11 +31,13 @@ Lettura* InertialDriver::pop_front(){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}
 
-	int old_first = first;
+	//resetto l'oggetto usando il costruttore
+    Misura m = v[first];
+	v[first] = Misura();
 	
 	first = (first+1) % BUFFER_DIM;
 
-	return v[old_first].get();
+	return m.get();
 	
 }
 
