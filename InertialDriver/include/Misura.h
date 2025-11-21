@@ -2,6 +2,7 @@
 #define MISURA_H
 
 #include "Lettura.h"
+
 class Misura{
   //definisco una costante pubblica che indica il numero di sensori
   static const int SENSOR= 17;
