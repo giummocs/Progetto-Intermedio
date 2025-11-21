@@ -2,6 +2,15 @@
 #define MyVector_hpp
 
 template<typename T>
+MyVector<T>::MyVector(){
+	//inizializzo le variabili
+	size = 0;
+	max_size = 0;
+	v = new T[max_size];
+	
+}
+
+template<typename T>
 MyVector<T>::MyVector(int max_size){
 	//inizializzo le variabili
 	size = 0;
@@ -9,7 +18,7 @@ MyVector<T>::MyVector(int max_size){
 	v = new T[max_size];
 
 	//inizializzo tutti i valori a 0
-	std::fill(v, v+max_size, 0.0);
+	std::fill(v, v+max_size, T());
 }
 
 template<typename T>
@@ -21,7 +30,7 @@ MyVector<T>::MyVector(std::initializer_list<T> lst){
 
 	//copio la lista nel nuovo vettore appena creato e inizializzo gli spazi vuoti a 0
 	std::copy(lst.begin(), lst.end(), v);
-	std::fill(v+size, v+max_size, 0.0);
+	std::fill(v+size, v+max_size, T());
 }
 
 template <typename T>
