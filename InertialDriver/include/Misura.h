@@ -4,9 +4,11 @@
 #include <iostream>
 #include "Lettura.h"
 
+//definisco una costante pubblica che indica il numero di sensori
+static const int SENSOR = 17;
+
 class Misura{
-  //definisco una costante pubblica che indica il numero di sensori
-  static const int SENSOR= 17;
+  
   //costruttore di default
   Misura();
   //
