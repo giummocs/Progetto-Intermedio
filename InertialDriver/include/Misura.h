@@ -7,8 +7,6 @@ class Misura{
   static const int SENSOR= 17;
   //costruttore di default
   Misura();
-  //costruttore di copia
-  Misura(const Misura& m);
   //
   void replace(Lettura nuova_misura[]);
   //distruttore
