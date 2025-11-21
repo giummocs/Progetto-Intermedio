@@ -8,7 +8,7 @@ class Misura{
   //construttore di default
   Misura();
   //
-  void add(Lettura nuova_misura[]);
+  void replace(Lettura nuova_misura[]);
 
   
   
