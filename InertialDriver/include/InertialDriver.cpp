@@ -26,18 +26,17 @@ void InertialDriver::push_back(Lettura nuova_misura[]){
 	
 }
 
-Lettura* InertialDriver::pop_front(){
+const Lettura* InertialDriver::pop_front(){
 	if(last == first){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}
 
-	//resetto l'oggetto usando il costruttore
-    Misura m = v[first];
-	v[first] = Misura();
+	//non resetto i valori della misura perchè l'array viene passato tramite puntatore e "punta" agli stessi valori di v[old_first]
+	int old_first = first;
 	
 	first = (first+1) % BUFFER_DIM;
 
-	return m.get();
+	return v[old_first].get();
 	
 }
 
