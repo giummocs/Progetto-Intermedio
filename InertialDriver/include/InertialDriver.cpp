@@ -62,7 +62,7 @@ Lettura InertialDriver::get_reading(int i){
     }
 
 	int index_last = (last - 1 + BUFFER_DIM) % BUFFER_DIM;
-    return v[index_last][i];
+    return v[index_last].at(i);
 }
 
 std::ostream& InertialDriver::print() const{
