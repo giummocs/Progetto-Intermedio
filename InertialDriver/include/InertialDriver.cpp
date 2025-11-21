@@ -53,9 +53,6 @@ void InertialDriver::clear_buffer(){
 }
     
 Lettura InertialDriver::get_reading(int i){   
-	if(i < 0 || i >= SENSOR){
-		throw std::out_of_range("Indice fuori dai bordi!");
-	}
 	
 	if(first == last){
         throw std::out_of_range("Il vettore e' vuoto!");
