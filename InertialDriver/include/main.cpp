@@ -79,7 +79,7 @@ int main(){
         Lettura* m2 = id1.pop_front();
     }
     catch (const std::out_of_range& e){
-        std::cout<< "Il vettore e' vuoto! \n"
+        std::cout<< "Il vettore e' vuoto! \n";
     }
 
     //riempio parzialmente id2 giusto per testare
@@ -93,13 +93,13 @@ int main(){
         Lettura l2 = id1.get_reading(0);
     }
     catch (const std::out_of_range& e){
-        std::cout<< "Il vettore e' vuoto! \n"
+        std::cout<< "Il vettore e' vuoto! \n";
     }
     try{
         Lettura l2 = id2.get_reading(9999);
     }
     catch (const std::out_of_range& e){
-        std::cout<< "Indice non corretto \n"
+        std::cout<< "Indice non corretto \n";
     }
 
     //test della funzione clear_buffer
@@ -111,6 +111,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
