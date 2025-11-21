@@ -14,7 +14,7 @@ class Misura{
   
   Lettura& operator[] (int i);
   
-  const Lettura& operator[] (int i);
+  const Lettura& operator[] (int i) const;
 
   private:
   Lettura array[SENSOR];
