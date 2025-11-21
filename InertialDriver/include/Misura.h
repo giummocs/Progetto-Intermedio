@@ -9,6 +9,8 @@ class Misura{
   Misura();
   //
   void replace(Lettura nuova_misura[]);
+  //restisce lettura all'indice index
+  Lettura at(int index);
   //distruttore
   ~Misura();
   
