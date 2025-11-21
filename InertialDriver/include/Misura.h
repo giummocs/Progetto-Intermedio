@@ -8,7 +8,7 @@
 static const int SENSOR = 17;
 
 class Misura{
-  
+  public:
   //costruttore di default
   Misura();
   //
