@@ -1,7 +1,9 @@
 #ifndef MISURA_H
 #define MISURA_H
 
+#include "Lettura.h"
 class Misura{
+  constexpr SENSOR= 17;
   Misura();
   
   
@@ -10,7 +12,7 @@ class Misura{
 
 
   private:
-  Lettura array[];
+  Lettura array[SENSOR];
 }
 
 #endif
