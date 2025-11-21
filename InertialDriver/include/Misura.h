@@ -11,7 +11,7 @@ class Misura{
   //
   void replace(Lettura nuova_misura[]);
   //
-  Lettura[] Misura::get();
+  Lettura[] get();
   //restisce lettura all'indice i
   Lettura at(int i);
   //distruttore
