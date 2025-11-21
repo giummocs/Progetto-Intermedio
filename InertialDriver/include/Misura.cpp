@@ -2,12 +2,12 @@
 
 Misura::Misura(){
     for (int i = 0; i < SENSOR; i++){
-        array.yaw_v=0.0;
-        array.yaw_a=0.0;
-        array.pitch_v=0.0;
-        array.pitch_a=0.0;
-        array.roll_v=0.0;
-        array.roll_a=0.0;
+        array[i].yaw_v=0.0;
+        array[i].yaw_a=0.0;
+        array[i].pitch_v=0.0;
+        array[i].pitch_a=0.0;
+        array[i].roll_v=0.0;
+        array[i].roll_a=0.0;
       }
 }
 
