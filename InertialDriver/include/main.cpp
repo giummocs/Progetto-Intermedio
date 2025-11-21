@@ -3,7 +3,6 @@
 
 int main(){
 
-    static const SENSOR = 17;
     //creo due oggetti InertialDriver uno senza parametro e uno con
     InertialDriver id1;
     InertialDriver id2(10);
@@ -112,6 +111,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
