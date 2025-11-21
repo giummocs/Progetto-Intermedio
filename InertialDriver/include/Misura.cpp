@@ -22,6 +22,10 @@ void Misura::replace(Lettura nuova_misura[]){
       }
 }
 
+Lettura Misura::at(int i){
+    return array[i];
+}
+
 Misura::~Misura(){
     delete[] array;
 }
