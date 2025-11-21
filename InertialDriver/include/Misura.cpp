@@ -22,7 +22,7 @@ void Misura::replace(Lettura nuova_misura[]){
       }
 }
 
-Lettura* Misura::get(){
+const Lettura* Misura::get() const{
 	return array;
 }
 
