@@ -18,8 +18,8 @@ int main(){
         misura1[i].roll_a= 0;
     }
 
-    Lettura misura2[id1.SENSOR];
-    for (int i= 0; i < id1.SENSOR; i++){
+    Lettura misura2[SENSOR];
+    for (int i= 0; i < SENSOR; i++){
         misura2[i].yaw_v= i;
         misura2[i].yaw_a= i;
         misura2[i].pitch_v= i;
@@ -27,8 +27,8 @@ int main(){
         misura2[i].roll_v= i;
         misura2[i].roll_a= i;
     }
-    Lettura misura3[id1.SENSOR];
-    for (int i= 0; i < id1.SENSOR; i++){
+    Lettura misura3[SENSOR];
+    for (int i= 0; i < SENSOR; i++){
         misura3[i].yaw_v= i*100;
         misura3[i].yaw_a= i*100;
         misura3[i].pitch_v= i*100;
@@ -111,6 +111,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
