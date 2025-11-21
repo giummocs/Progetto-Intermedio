@@ -11,25 +11,13 @@ InertialDriver::InertialDriver(int buff_sz) : BUFFER_DIM(buff_sz), v(buff_sz) {
 }
 
 
-void InertialDriver::push_back(Lettura misura[]){
+void InertialDriver::push_back(Lettura nuova_misura[]){
 	if(BUFFER_DIM==0){
 		throw std::out_of_range("Il vettore non ha dimensione!");
 	}
 
-	//alloca il nuovo spazio per la misura
-    Lettura* nuova_misura = new Lettura[SENSOR];
 
-    //copia i 17 elementi dell'array
-    for (int i = 0; i < SENSOR; ++i) {
-        nuova_misura[i] = misura[i];
-    }
-    
-    //dealloca il vecchio puntatore
-    if (v[last] != nullptr) {
-        delete[] v[last]; 
-    }
-
-    v[last] = nuova_misura;
+    v[last].replace(nuova_misura);
 
 	last = (last+1) % BUFFER_DIM;
 	if(last == first){
@@ -38,13 +26,14 @@ void InertialDriver::push_back(Lettura misura[]){
 	
 }
 
-Lettura* InertialDriver::pop_front(){
+Misura InertialDriver::pop_front(){
 	if(last == first){
 		throw std::out_of_range("Il vettore e' vuoto!");
 	}
 
-	Lettura* vecchia_misura = v[first]; 
-    v[first] = nullptr; 
+	Misura vecchia_misura = v[first];
+	Misura m = new Misura();
+    v[first] = m; 
 	
 	first = (first+1) % BUFFER_DIM;
 
