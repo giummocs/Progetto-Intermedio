@@ -17,7 +17,7 @@ MyVector<T>::MyVector(int max_size){
 	this->max_size = max_size;
 	v = new T[max_size];
 
-	//inizializzo tutti i valori a 0
+	//inizializzo tutti i valori chiamando il construtto di default del typename
 	std::fill(v, v+max_size, T());
 }
 
@@ -28,7 +28,7 @@ MyVector<T>::MyVector(std::initializer_list<T> lst){
 	max_size = size * 2;
 	v = new T[max_size];
 
-	//copio la lista nel nuovo vettore appena creato e inizializzo gli spazi vuoti a 0
+	//copio la lista nel nuovo vettore appena creato e inizializzo gli spazi vuoti
 	std::copy(lst.begin(), lst.end(), v);
 	std::fill(v+size, v+max_size, T());
 }
@@ -46,6 +46,7 @@ void MyVector<T>::safe_set(int i, T valore)
 template <typename T>
 T& MyVector<T>::safe_get(int i)
 {
+	//lancio una eccezione se l'indice e' sbagliato
     if(i<0 || i>=size){
 		throw std::out_of_range("Indice fuori dai bordi!");
 	}
@@ -66,7 +67,7 @@ const T& MyVector<T>::operator[] (int i) const{
 
 template<typename T>
 T& MyVector<T>::at(int i){
-	
+	//lancio una eccezione se l'indice e' sbagliato
 	if(i<0 || i>=size){
 		throw std::out_of_range("Indice fuori dai bordi!");
 	}
@@ -80,39 +81,44 @@ int MyVector<T>::getSize(){
 
 template<typename T>
 void MyVector<T>::push_back(T valore){
-	
+	//se il vettore è pieno aumenta la dimensione
 	if (size >= max_size) {
-           reserve(max_size * 2);  
-       }
-       v[size] = valore;
-       size++;
+        reserve(max_size * 2);  
+    }
+	
+    v[size] = valore;
+    size++;
 }
 
 template<typename T>
 T& MyVector<T>::pop_back(){
 	
-	if(size > 0){
-		T oldValue = v[size-1];
-		v[size-1] = 0.0;
-		size--;
-		return oldValue;
+	if(size <= 0){
+		throw std::out_of_range("Vettore vuoto!");
 	}
-	else{ throw std::out_of_range("Vettore vuoto!");}
 
+	//salvo il vecchio valore
+	T oldValue = v[size-1];
+
+	//resetto il vecchio valore
+	v[size-1] = 0.0;
+	
+	size--;
+	return oldValue;
 }
 
 template<typename T>
-void MyVector<T>::reserve(int newCapacity) {
+void MyVector<T>::reserve(int new_capacity) {
+	//controllo che la nuova capacità sia maggiore della vecchia
+	if (new_capacity <= max_size) { throw std::out_of_range("Valore non valido!"); }
 	
-	if (newCapacity <= max_size) return;
-	
-    T* newBuffer = new T[newCapacity];
+    T* newBuffer = new T[new_capacity];
     std::copy(v, v + size, newBuffer);
-	std::fill(newBuffer + size, newBuffer + newCapacity, 0.0);
+	std::fill(newBuffer + size, newBuffer + new_capacity, 0.0);
 
     delete[] v;
     v = newBuffer;
-    max_size = newCapacity;
+    max_size = new_capacity;
 }
 
 template<typename T>
