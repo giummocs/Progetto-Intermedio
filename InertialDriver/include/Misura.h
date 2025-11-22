@@ -11,23 +11,28 @@ class Misura{
   public:
   //costruttore di default
   Misura();
-  //
+
+  //copia ogni valore della nuova misura nell'array
   void replace(Lettura nuova_misura[]);
-  //
+
+  //ritorna l'intero array tramite puntatore
   const Lettura* get() const;
-  //restisce lettura all'indice i
+
+  //restitusce la lettura all'indice i
   Lettura at(int i);
-  
+
   Lettura& operator[] (int i);
   
   const Lettura& operator[] (int i) const;
 
+  //compone l'oggetto ostream con i valori da stampare
   std::ostream& print() const;
 
   private:
   Lettura array[SENSOR];
 };
 
+//overload dell'operatore <<
 std::ostream& operator<<(std::ostream& out, const Misura& t);
 
 #endif
