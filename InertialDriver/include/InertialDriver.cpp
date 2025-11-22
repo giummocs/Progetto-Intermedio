@@ -87,7 +87,10 @@ std::ostream& InertialDriver::print() const{
 	int last_added = (last - 1 + BUFFER_DIM) % BUFFER_DIM;
     
     out << "\nUltima Misura Salvata\n";
+
+	//uso l'overloading dell'operatore << della classe Misura
 	out << v[last_added];
+	
     return out;
 }
 
