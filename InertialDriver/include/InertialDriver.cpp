@@ -96,7 +96,6 @@ std::ostream& InertialDriver::print() const{
 
 InertialDriver::~InertialDriver(){
 	clear_buffer();
-	delete[] v;
 }
  
 std::ostream& operator<<(std::ostream& out, const InertialDriver& t){
