@@ -12,6 +12,13 @@ Misura::Misura(){
       }
 }
 
+Misura::Misura(const Lettura* letture){
+    //copio tutti gli elementi del puntatore
+    for (int i = 0; i < SENSOR; i++){
+        array[i]= letture[i];
+    }
+}
+
 void Misura::replace(Lettura nuova_misura[]){
 	//copio tutti i valori della nuova misura
     for (int i = 0; i < SENSOR; i++){
