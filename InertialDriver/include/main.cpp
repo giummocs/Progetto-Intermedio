@@ -19,6 +19,7 @@ int main(){
         misura2[i].roll_v= i;
         misura2[i].roll_a= i;
     }
+    
     Lettura misura3[SENSOR];
     for (int i= 0; i < SENSOR; i++){
         misura3[i].yaw_v= i*100;
@@ -60,15 +61,10 @@ int main(){
     //se ora faccio pop_front dovrei ottenere misura2 DA COMPLETARE!!
     const Lettura* m = id2.pop_front();
 
-    //DELETE SU PUNTATORE A DATI INTERNI!
-    //delete m;
-
     //svuoto id2 con pop_front
     for (int i= 0; i<8; i++)
     {
         const Lettura* a = id2.pop_front();
-
-       // delete[] a;
     }
 
     //se provo a eseguire le seguenti funzioni dovrebbe lanciare delle eccezioni
@@ -86,6 +82,7 @@ int main(){
 
     //test della funzione get_reading
     Lettura l1 = id2.get_reading(0);
+    
     //dovrebbe lanciare un'eccezione con
     try{
         Lettura l2 = id1.get_reading(0);
@@ -93,6 +90,7 @@ int main(){
     catch (const std::out_of_range& e){
         std::cout<< "Il vettore e' vuoto! \n\n";
     }
+    
     try{
         Lettura l2 = id2.get_reading(9999);
     }
@@ -111,6 +109,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
