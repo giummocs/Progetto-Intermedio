@@ -3,7 +3,7 @@
 
 int main(){
     //costante statica che indica la dimensione del buffer di prova
-    static const int DIM= 10;
+    static const int DIM = 10;
     //creiamo due oggetti InertialDriver uno senza parametro e uno con
     InertialDriver id1;
     InertialDriver id2(DIM);
@@ -139,6 +139,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
