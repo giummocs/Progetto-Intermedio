@@ -44,7 +44,6 @@ class MyVector{
 
 
 	private:
-
 	//funzione membro per la gestione del vettore nel caso sia pieno
 	void reserve(int newCapacity);
 
