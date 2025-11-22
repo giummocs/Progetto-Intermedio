@@ -1,5 +1,5 @@
-#ifndef MISURA_H
-#define MISURA_H
+#ifndef Misura_h
+#define Misura_h
 
 #include <iostream>
 #include "Lettura.h"
