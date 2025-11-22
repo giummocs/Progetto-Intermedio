@@ -12,6 +12,9 @@ class Misura{
   //costruttore di default
   Misura();
 
+  //costruttore che copia da un puntatore Lettura*
+  Misura(const Lettura* letture);
+
   //copia ogni valore della nuova misura nell'array
   void replace(Lettura nuova_misura[]);
 
