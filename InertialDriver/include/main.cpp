@@ -8,26 +8,34 @@ int main(){
     InertialDriver id2(10);
 
     //creo diverse misure (array di 17 letture)
-    Lettura misura1[SENSOR]; //costruttore default con valori a 0
+    Lettura misura1[SENSOR];
+    for (int i= 0; i < SENSOR; i++){
+        misura1[i].yaw_v = 0.0;
+        misura1[i].yaw_a = 0.0;
+        misura1[i].pitch_v = 0.0;
+        misura1[i].pitch_a = 0.0;
+        misura1[i].roll_v = 0.0;
+        misura1[i].roll_a = 0.0;
+    }
 
     Lettura misura2[SENSOR];
     for (int i= 0; i < SENSOR; i++){
-        misura2[i].yaw_v= i;
-        misura2[i].yaw_a= i;
-        misura2[i].pitch_v= i;
-        misura2[i].pitch_a= i;
-        misura2[i].roll_v= i;
-        misura2[i].roll_a= i;
+        misura2[i].yaw_v = i;
+        misura2[i].yaw_a = i;
+        misura2[i].pitch_v = i;
+        misura2[i].pitch_a = i;
+        misura2[i].roll_v = i;
+        misura2[i].roll_a = i;
     }
     
     Lettura misura3[SENSOR];
     for (int i= 0; i < SENSOR; i++){
-        misura3[i].yaw_v= i*100;
-        misura3[i].yaw_a= i*100;
-        misura3[i].pitch_v= i*100;
-        misura3[i].pitch_a= i*100;
-        misura3[i].roll_v= i*100;
-        misura3[i].roll_a= i*100;
+        misura3[i].yaw_v = i*100;
+        misura3[i].yaw_a = i*100;
+        misura3[i].pitch_v = i*100;
+        misura3[i].pitch_a = i*100;
+        misura3[i].roll_v = i*100;
+        misura3[i].roll_a = i*100;
     }
 
 
@@ -109,6 +117,7 @@ int main(){
     return 0;
 
 }
+
 
 
 
