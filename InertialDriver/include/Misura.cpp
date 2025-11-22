@@ -1,6 +1,7 @@
 #include "Misura.h"
 
 Misura::Misura(){
+	//inizializzo tutti i valori dell'array a 0
     for (int i = 0; i < SENSOR; i++){
         array[i].yaw_v=0.0;
         array[i].yaw_a=0.0;
@@ -12,6 +13,7 @@ Misura::Misura(){
 }
 
 void Misura::replace(Lettura nuova_misura[]){
+	//copio tutti i valori della nuova misura
     for (int i = 0; i < SENSOR; i++){
         array[i].yaw_v = nuova_misura[i].yaw_v;
         array[i].yaw_a = nuova_misura[i].yaw_a;
@@ -23,10 +25,12 @@ void Misura::replace(Lettura nuova_misura[]){
 }
 
 const Lettura* Misura::get() const{
+	//ritorno il puntatore all'array, utile alla funzione pop_front
 	return array;
 }
 
 Lettura Misura::at(int i){
+	//controllo la validità dell'indice
     if(i < 0 || i >= SENSOR){
 		throw std::out_of_range("Indice fuori dai bordi!");
 	}
@@ -45,6 +49,7 @@ const Lettura& Misura::operator[] (int i) const{
 std::ostream& Misura::print() const{
 	std::ostream& out = std::cout;
 
+	//scrivo tutti i valori nell'oggetto out e lo ritorno
 	for(int i = 0; i < SENSOR; i++)
 	{
 	    out << "Sensore " << i + 1 << ":\n";
